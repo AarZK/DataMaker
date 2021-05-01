@@ -13,6 +13,11 @@ public class CommandParam {
     public static String confPath;
 
     public static void initParam(ParamParser.Args args) {
+        /*
+         * @Description: get parameters
+         * @Param: [args]
+         * @Return: void
+         */
         confPath = args.confPath;
     }
 }
