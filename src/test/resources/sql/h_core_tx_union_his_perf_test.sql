@@ -1,4 +1,3 @@
-DROP TABLE IF EXISTS `h_core_tx_union_his_perf_test`;
 CREATE TABLE `h_core_tx_union_his_perf_test`
 (
     `acctt`        varchar(64) COLLATE utf8mb4_bin   DEFAULT NULL COMMENT '账号',
@@ -60,9 +59,5 @@ CREATE TABLE `h_core_tx_union_his_perf_test`
     `flag`         varchar(10) COLLATE utf8mb4_bin   DEFAULT NULL COMMENT '数据来源标志',
     `flagdes`      varchar(20) COLLATE utf8mb4_bin   DEFAULT NULL COMMENT '数据来源标志描述',
     `etl_dt`       varchar(20) COLLATE utf8mb4_bin   DEFAULT NULL COMMENT '历史数据平台跑批日期',
-    `partition_dt` varchar(20) COLLATE utf8mb4_bin   DEFAULT NULL COMMENT '分区字段',
-    KEY `idx_h_core_tx_union_his_perf_test_1` (`acctt`, `partition_dt`, `trndate`)
-) ENGINE = SEQUOIADB
-  DEFAULT CHARSET = utf8mb4
-  COLLATE = utf8mb4_bin
-  ROW_FORMAT = DYNAMIC COMMENT ='sequoiadb:{table_options:{Compressed:true,CompressionType:''lzw''}}';
+    `partition_dt` varchar(20) COLLATE utf8mb4_bin   DEFAULT NULL COMMENT '分区字段'
+);
