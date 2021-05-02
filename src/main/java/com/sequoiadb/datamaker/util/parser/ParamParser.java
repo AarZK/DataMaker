@@ -1,8 +1,8 @@
-package com.sequoiadb.datamaker.util;
+package com.sequoiadb.datamaker.util.parser;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
-import com.sequoiadb.datamaker.model.CommandParam;
+import com.sequoiadb.datamaker.model.base.CommandParam;
 
 /***
  * @Program     : DataMaker
