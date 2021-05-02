@@ -1,8 +1,6 @@
 package com.sequoiadb.datamaker.util.parser;
 
-import com.sequoiadb.datamaker.model.conf.DdlConf;
-import com.sequoiadb.datamaker.model.conf.SdbConf;
-import com.sequoiadb.datamaker.model.conf.SsqlConf;
+import com.sequoiadb.datamaker.model.conf.*;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -17,16 +15,18 @@ import java.util.Properties;
  **/
 public class ConfParser {
 
-    private static Properties PROPERTIES;
+    private static Properties PROPERTIES = null;
 
     public static void parseConf(String confPath) {
-        PROPERTIES = new Properties();
-        try {
-            File file = new File(confPath);
-            FileInputStream fileInputStream = new FileInputStream(file);
-            PROPERTIES.load(fileInputStream);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (PROPERTIES == null) {
+            PROPERTIES = new Properties();
+            try {
+                File file = new File(confPath);
+                FileInputStream fileInputStream = new FileInputStream(file);
+                PROPERTIES.load(fileInputStream);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -42,10 +42,19 @@ public class ConfParser {
         SsqlConf.Auth.setPassword(PROPERTIES.getProperty("ssql.auth.password"));
         SsqlConf.Auth.setDriver(PROPERTIES.getProperty("ssql.auth.driver"));
     }
-    
-    public static void initDdlConf(){
+
+    public static void initCpConf() {
+        CpConf.setMaximumPoolSize(PROPERTIES.getProperty("cp.maximumPoolSize"));
+        CpConf.setMinimumIdle(PROPERTIES.getProperty("cp.minimumIdle"));
+    }
+
+    public static void initDdlConf() {
         DdlConf.Path.setJs(PROPERTIES.getProperty("ddl.path.js"));
         DdlConf.Path.setSql(PROPERTIES.getProperty("ddl.path.sql"));
+    }
+
+    public static void initResourceConf() {
+        ResourceConf.setCharset(PROPERTIES.getProperty("resource.charset"));
     }
 
 }
