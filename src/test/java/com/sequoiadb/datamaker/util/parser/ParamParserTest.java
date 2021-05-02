@@ -1,7 +1,5 @@
 package com.sequoiadb.datamaker.util.parser;
 
-import com.sequoiadb.datamaker.model.base.CommandParam;
-import com.sequoiadb.datamaker.util.parser.ParamParser;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -18,6 +16,6 @@ public class ParamParserTest {
         String confPath = "../src/test.java";
         String[] args = {"-conf", confPath};
         ParamParser.parse(args);
-        Assert.assertEquals(confPath, CommandParam.CONF_PATH);
+        Assert.assertEquals(confPath, ParamParser.CONF_PATH);
     }
 }

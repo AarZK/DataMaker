@@ -1,9 +1,8 @@
 package com.sequoiadb.datamaker.util.parser;
 
-import com.sequoiadb.datamaker.conf.DdlConf;
-import com.sequoiadb.datamaker.conf.SdbConf;
-import com.sequoiadb.datamaker.conf.SsqlConf;
-import com.sequoiadb.datamaker.model.base.CommandParam;
+import com.sequoiadb.datamaker.model.conf.DdlConf;
+import com.sequoiadb.datamaker.model.conf.SdbConf;
+import com.sequoiadb.datamaker.model.conf.SsqlConf;
 
 import java.io.File;
 import java.io.FileInputStream;

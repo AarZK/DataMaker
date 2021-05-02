@@ -1,6 +1,6 @@
 package com.sequoiadb.datamaker.util.parser;
 
-import com.sequoiadb.datamaker.conf.SdbConf;
+import com.sequoiadb.datamaker.model.conf.SdbConf;
 import org.junit.Test;
 
 /***

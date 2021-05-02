@@ -2,7 +2,6 @@ package com.sequoiadb.datamaker.util.parser;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
-import com.sequoiadb.datamaker.model.base.CommandParam;
 
 /***
  * @Program     : DataMaker
@@ -12,12 +11,14 @@ import com.sequoiadb.datamaker.model.base.CommandParam;
  **/
 public class ParamParser {
 
+    public static String CONF_PATH;
+
     public static void parse(String[] mainArgs) {
         Args args = new Args();
         JCommander jCommander = JCommander.newBuilder().addObject(args).build();
         jCommander.parse(mainArgs);
         args.parse(jCommander);
-        CommandParam.initParam(args);
+        CONF_PATH = args.confPath;
     }
 
     public static class Args {

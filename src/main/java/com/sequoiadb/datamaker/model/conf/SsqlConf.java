@@ -1,4 +1,4 @@
-package com.sequoiadb.datamaker.conf;
+package com.sequoiadb.datamaker.model.conf;
 
 /***
  * @Program     : DataMaker
